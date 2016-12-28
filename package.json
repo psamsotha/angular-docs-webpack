@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Startup webpack project from Angular docs",
   "scripts": {
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "start": "webpack-dev-server --inline --progress --port 8080",
+    "lint": "tslint ./app/**/*.ts -t verbose",
     "test": "karma start",
-    "test:single": "karma start --single-run",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    "test:single": "karma start --single-run"
   },
   "license": "MIT",
   "dependencies": {
@@ -46,6 +47,7 @@
     "rimraf": "^2.5.2",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
+    "tslint": "^3.15.1",
     "typescript": "~2.0.10",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
