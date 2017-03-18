@@ -1,5 +1,7 @@
+import '../assets/css/styles.scss';
+
 import { Component } from '@angular/core';
-import '../../public/css/styles.scss';
+import { getDefaultMessage } from 'src/message';
 
 
 @Component({
@@ -8,5 +10,9 @@ import '../../public/css/styles.scss';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  message: string;
 
+  constructor() {
+    this.message = getDefaultMessage().value;
+  }
 }
